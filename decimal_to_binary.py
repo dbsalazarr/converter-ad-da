@@ -11,16 +11,19 @@ def convert_n_bits( quantity_bits) :
     pass
 
 """
-    TODO: Modificar el algoritmo para que pueda convertir números negativos a binario
+    TODO: Fix the problem to convert the zero to zero in binary
 """
 def decimal_to_binary( number ) :
     number = abs(number)
     binary_number = ""
     residuo = 0
-    while number > 0 :
-        residuo = number % 2
-        number //= 2
-        binary_number += str(residuo)
+    if number == 0 :
+        binary_number = "0"
+    else :
+        while number > 0 :
+            residuo = number % 2
+            number //= 2
+            binary_number += str(residuo)
     # Invert the array
     binary_number = binary_number[::-1] 
     return binary_number
@@ -29,7 +32,7 @@ def main() :
     print(" DCB DECIMAL CONVERT TO BINARY ")
     
     numbers_to_binary = []
-    numbers_decimal = generate_numbers(5, -15, 15)
+    numbers_decimal = generate_numbers(10, 0, 4)
     for number in numbers_decimal :
         numbers_to_binary.append( decimal_to_binary(number) )
 
