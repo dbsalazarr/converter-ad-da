@@ -28,11 +28,15 @@ def gray_encode( binary ) :
 
 def main() :
     print("El número en binario es: ")
+    binary_numbers = []
     gray_code = []
-    for i in range(0, 32) :
+    for i in range(0, 4) :
         binary_number = binary.decimal_to_binary(i)
-        gray_code.append( binary.convert_n_bits(5, gray_encode(binary_number)) )
+        binary_numbers.append( binary.convert_n_bits(4, binary_number))
+        gray_code.append( binary.convert_n_bits(4, gray_encode(binary_number)) )
 
+    print("BINARY NUMBERS")
+    print( binary_numbers)
     print("GRAY CODE")
     print(gray_code)
 
