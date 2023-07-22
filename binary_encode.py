@@ -7,9 +7,8 @@ def main() :
 def gray_encode( binary ) :
     """
     Ejemplo del gray code
-    1001
-
-    1101
+    1001 => 1101
+    1111 => 1000
     """
 
 
