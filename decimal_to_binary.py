@@ -21,6 +21,15 @@ def generate_numbers(quantity_numbers, min_range, max_range):
 
 def convert_n_bits( quantity_bits, number) :
     # Generar los zeros
+    """
+        Función para convertir un número binario de m bits a n bits siendo n > ,
+
+        Args:
+            quantity_bits (int) : Cantidad de bits al cual se transformará la función
+            number (str) : número binario el cual se transforamara a la cantidad de bits especificados
+        Returns :
+            str : Retorna una cadena con el número convertido a los bits deseados
+    """
     zeros = ""
     for _ in range( quantity_bits - len(number)) :
         zeros += "0"
