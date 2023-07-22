@@ -1,6 +1,8 @@
-import decimal_to_binary
+import decimal_to_binary as binary
+
 def main() :
-    print (decimal_to_binary(100))
+    print("El número en binario es: ")
+    print (binary.decimal_to_binary(100))
 
 def gray_encode() :
     pass
