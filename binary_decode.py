@@ -14,16 +14,14 @@ def gray_decode( gray_code ) :
             0011 => 0010
             0010 => 0011
 
-            desarrollo 
+            0 1 1 1
+            0 1 0 1
     """
     binary_number = gray_code[0]
-    for i in range( len(gray_code) - 1 ) :
-        sum = int(gray_code[i]) + int(gray_code[i + 1])
-        if sum >= 2 :
-            binary_number += "0"
-        else :
-            binary_number += str( int(gray_code[i]) + int(gray_code[i + 1]) )
+
     return binary_number
+            
+
 
 def main():
     binary_numbers = []
@@ -33,7 +31,7 @@ def main():
         number_binary = binary.convert_n_bits(4, binary.decimal_to_binary(i) )
         binary_numbers.append( number_binary)
         
-        number_gray = gray.gray_encode(number_binary)
+        number_gray = gray.gray_encode( number_binary )
         numbers_gray.append( number_gray )
         
         binary_decode.append( gray_decode( number_gray) )
