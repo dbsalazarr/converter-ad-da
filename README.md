@@ -4,15 +4,15 @@ Proyecto universitario y de aprendizaje para crear un conversor análogico digit
 ## Funcionalidades
 * Generación de números en binario y expresarlos en una determinada cantidad de bits
 * Generación de señales:
-    - Senoidales
-    - Triangulares o rampa
+    1. Senoidales
+    2. Triangulares o rampa
 * Cuantización de las señales generadas
 * Codificación para la transmisión
 * Exportación de los datos generados en formato:
-    - .csv
-    - .txt
-    - .xlsx
-    - .pdf
+    1. .csv
+    2. .txt
+    3. .xlsx
+    4. .pdf
 
 ## Carácteristicas
 * Uso de librerias definidas y creadas
