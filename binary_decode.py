@@ -18,6 +18,8 @@ def gray_decode( gray_code ) :
             0 1 0 1
     """
     binary_number = gray_code[0]
+    for i in range( len(gray_code) - 1) :
+        binary_number[i+1] += binary_number[i] + gray_code[i+1]
 
     return binary_number
             
