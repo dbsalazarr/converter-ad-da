@@ -27,7 +27,7 @@ def gray_encode( binary ) :
     return gray_code           
 
 def main() :
-    print("El número en binario es: ")
+    print("El numero en binario es: ")
     binary_numbers = []
     gray_code = []
     for i in range(0, 4) :

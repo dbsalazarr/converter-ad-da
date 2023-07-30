@@ -58,10 +58,5 @@ def main():
     print( " BINARY NUMBER " )
     print( binary_decode ) 
 
-    print( "OTHERS" ) 
-    print( binary_numbers[5] )
-    print( numbers_gray[5] )
-    print( binary_decode[5] )
-
 if __name__ == "__main__" :
     main()
