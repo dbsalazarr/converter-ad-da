@@ -41,8 +41,8 @@ def main():
     binary_numbers = []
     numbers_gray = []
     binary_decode = []
-    for i in range(0, 32) :
-        number_binary = binary.convert_n_bits(5, binary.decimal_to_binary(i) )
+    for i in range(0, 16) :
+        number_binary = binary.convert_n_bits(4, binary.decimal_to_binary(i) )
         binary_numbers.append( number_binary)
         
         number_gray = gray.gray_encode( number_binary )
