@@ -88,7 +88,18 @@ def decimal_to_binary( number ) :
     binary_number = binary_number[::-1] 
     return binary_number
 
-def decimal_to_signed_binary( number, quantity_bits ) : 
+def decimal_to_signed_binary( number, quantity_bits ) :
+    """
+        Función para convertir un número decimal a un número binario con signo
+        La función agrega un cero o uno a la magnitud de número si es positivo o negativo respectivamente.
+
+        Args :
+            number (int) : Número decimal a ser convertido
+            quantity_bits (int) : Determinar la cantidad de bits con la cual se desea representar el número
+        
+            Returns
+                string : Retorna el número binario con signo
+    """
     value = abs(number)
     signed_binary = ""
     signed_binary = convert_n_bits(quantity_bits, decimal_to_binary(value))
