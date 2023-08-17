@@ -9,11 +9,15 @@ def generate_binary_numbers(quantity_numbers, min_range, max_range) :
     return binary_numbers
     
 
-
-"""
-    Esta función recibe el número binario como tipo str o texto
-"""
 def binary_to_decimal( binary_number ) :
+    """
+        Convierte un número binario a decimal
+        Args :
+            binary_number (str) : numero binario a ser convertido
+        Returns :
+            (int) : número decimal
+
+    """
     decimal_number = 0
     for i in range( len(binary_number) ) :
         decimal_number += int(binary_number[i])*2**( len(binary_number) - 1 - i )

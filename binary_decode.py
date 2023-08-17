@@ -1,4 +1,5 @@
-import decimal_to_binary as binary
+import decimal_to_binary as dtb
+import binary_to_decimal as btd
 import binary_encode as gray
 
 def gray_decode( gray_code ) :
@@ -37,12 +38,35 @@ def gray_decode( gray_code ) :
             aux = str( int(aux) + int(gray_code[i+1]))
     return binary_number
 
+def signed_binary_to_decimal( binary ) :
+
+    """
+        Función para convertir un número binario con signo a un número decimal
+        Args :
+            binary (str) : Número binario con signo a convertir a decimal
+        Returns :
+            (int) : Número en base 10 o decimal
+
+    """
+    sign = binary[0]
+    number = binary[1::]
+    decimal = btd.binary_to_decimal(number)
+    if sign == "0" :
+        return decimal
+    else :
+        return decimal * -1
+
+    
+
+
+
+
 def main():
     binary_numbers = []
     numbers_gray = []
     binary_decode = []
     for i in range(0, 16) :
-        number_binary = binary.convert_n_bits(4, binary.decimal_to_binary(i) )
+        number_binary = dtb.convert_n_bits(4, dtb.decimal_to_binary(i) )
         binary_numbers.append( number_binary)
         
         number_gray = gray.gray_encode( number_binary )
@@ -57,6 +81,9 @@ def main():
     print( numbers_gray )
     print( " BINARY NUMBER " )
     print( binary_decode ) 
+
+    print( " MOSTRANDO LA MAGNITUD DEL NÚMERO CON SIGNO ")
+    print( signed_binary_to_decimal("000100") )
 
 if __name__ == "__main__" :
     main()
