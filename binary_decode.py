@@ -56,8 +56,49 @@ def signed_binary_to_decimal( binary ) :
     else :
         return decimal * -1
 
-    
-
+def decode_digital_signal( bits ) :
+     """
+        Función para decodificar la señales codificadas
+        Args :
+            bits (str) :  Número binario a ser decodificado según los niveles de cuantización definidos
+        Returns:
+            (int) : Retorna un número decimal decodificado
+     """
+     analog_value = 0
+     if bits == "00000" : analog_value = 0.75
+     if bits == "00001" : analog_value = 1.5
+     if bits == "00010" : analog_value = 2.25
+     if bits == "00011" : analog_value = 3
+     if bits == "00100" : analog_value = 3.75
+     if bits == "00101" : analog_value = 4.5
+     if bits == "00110" : analog_value = 5.25
+     if bits == "00111" : analog_value = 6
+     if bits == "01000" : analog_value = 6.75
+     if bits == "01001" : analog_value = 7.5
+     if bits == "01010" : analog_value = 8.25
+     if bits == "01011" : analog_value = 9
+     if bits == "01100" : analog_value = 9.75
+     if bits == "01101" : analog_value = 10.5
+     if bits == "01110" : analog_value = 11.25
+     if bits == "01111" : analog_value = 12
+     # Negative values
+     if bits == "10000" : analog_value = -0.75
+     if bits == "10001" : analog_value = -1.5
+     if bits == "10010" : analog_value = -2.25
+     if bits == "10011" : analog_value = -3
+     if bits == "10100" : analog_value = -3.75
+     if bits == "10101" : analog_value = -4.5
+     if bits == "10110" : analog_value = -5.25
+     if bits == "10111" : analog_value = -6
+     if bits == "11000" : analog_value = -6.75
+     if bits == "11001" : analog_value = -7.5
+     if bits == "11010" : analog_value = -8.25
+     if bits == "11011" : analog_value = -9
+     if bits == "11100" : analog_value = -9.75
+     if bits == "11101" : analog_value = -10.5
+     if bits == "11110" : analog_value = -11.25
+     if bits == "11111" : analog_value = -12
+     return analog_value
 
 
 
@@ -84,6 +125,10 @@ def main():
 
     print( " MOSTRANDO LA MAGNITUD DEL NÚMERO CON SIGNO ")
     print( signed_binary_to_decimal("000100") )
+
+    print("DECODE DIGITAL SIGNAL")
+    print(decode_digital_signal("00000"))
+
 
 if __name__ == "__main__" :
     main()

@@ -1,4 +1,4 @@
-import decimal_to_binary as binary
+import decimal_to_binary as dtb
 
 def gray_encode( binary ) :
     """
@@ -26,14 +26,86 @@ def gray_encode( binary ) :
     
     return gray_code           
 
+# Codificando la señal a tratar
+def encode( value, quantity_bits ) :
+    binary_value = ""
+    if value >= 12 :
+        binary_value = dtb.decimal_to_signed_binary(15, quantity_bits)
+    elif value >= 11.25 :
+        binary_value = dtb.decimal_to_signed_binary(15, quantity_bits)
+    elif value >= 10.5 :
+        binary_value = dtb.decimal_to_signed_binary(14, quantity_bits)
+    elif value >= 9.75 : 
+        binary_value = dtb.decimal_to_signed_binary(13, quantity_bits)
+    elif value >= 9 :
+        binary_value = dtb.decimal_to_signed_binary(12, quantity_bits)
+    elif value >= 8.25 :
+        binary_value = dtb.decimal_to_signed_binary(11, quantity_bits)
+    elif value >= 7.5 :
+        binary_value = dtb.decimal_to_signed_binary(10, quantity_bits)
+    elif value >= 6.75 :
+        binary_value = dtb.decimal_to_signed_binary(9, quantity_bits)
+    elif value >= 6 :
+        binary_value = dtb.decimal_to_signed_binary(8, quantity_bits)
+    elif value >= 5.25 :
+        binary_value = dtb.decimal_to_signed_binary(7, quantity_bits)
+    elif value >= 4.5 :
+        binary_value = dtb.decimal_to_signed_binary(6, quantity_bits)
+    elif value >= 3.75 :
+        binary_value = dtb.decimal_to_signed_binary(5, quantity_bits)
+    elif value >= 3 :
+        binary_value = dtb.decimal_to_signed_binary(4, quantity_bits)
+    elif value >= 2.25 :
+        binary_value = dtb.decimal_to_signed_binary(3, quantity_bits)
+    elif value >= 1.5 :
+        binary_value = dtb.decimal_to_signed_binary(2, quantity_bits)
+    elif value >= 0.75 :
+        binary_value = dtb.decimal_to_signed_binary(1, quantity_bits) 
+    elif value >= 0 :
+        binary_value = dtb.decimal_to_signed_binary(0, quantity_bits) 
+    elif value >= -0.75 :
+        binary_value = dtb.decimal_to_signed_binary(0, quantity_bits) 
+    elif value >= -1.5 :
+        binary_value = dtb.decimal_to_signed_binary(-1, quantity_bits) 
+    elif value >= -2.25 :
+        binary_value = dtb.decimal_to_signed_binary(-2, quantity_bits) 
+    elif value >= -3 :
+        binary_value = dtb.decimal_to_signed_binary(-3, quantity_bits) 
+    elif value >= -3.75 :
+        binary_value = dtb.decimal_to_signed_binary(-4, quantity_bits) 
+    elif value >= -4.5 :
+        binary_value = dtb.decimal_to_signed_binary(-5, quantity_bits) 
+    elif value >= -5.25 :
+        binary_value = dtb.decimal_to_signed_binary(-6, quantity_bits) 
+    elif value >= -6 :
+        binary_value = dtb.decimal_to_signed_binary(-7, quantity_bits) 
+    elif value >=  -6.75:
+        binary_value = dtb.decimal_to_signed_binary(-8, quantity_bits) 
+    elif value >=  -7.5:
+        binary_value = dtb.decimal_to_signed_binary(-9, quantity_bits) 
+    elif value >=  -8.25:
+        binary_value = dtb.decimal_to_signed_binary(-10, quantity_bits) 
+    elif value >=  -9:
+        binary_value = dtb.decimal_to_signed_binary(-11, quantity_bits) 
+    elif value >=  -9.75:
+        binary_value = dtb.decimal_to_signed_binary(-12, quantity_bits) 
+    elif value >=  -10.5:
+        binary_value = dtb.decimal_to_signed_binary(-13, quantity_bits) 
+    elif value >=  -11.25:
+        binary_value = dtb.decimal_to_signed_binary(-14, quantity_bits) 
+    else :
+        binary_value = dtb.decimal_to_signed_binary(-15, quantity_bits) 
+    
+    return binary_value
+
 def main() :
     print("El numero en binario es: ")
     binary_numbers = []
     gray_code = []
     for i in range(0, 4) :
-        binary_number = binary.decimal_to_binary(i)
-        binary_numbers.append( binary.convert_n_bits(4, binary_number))
-        gray_code.append( binary.convert_n_bits(4, gray_encode(binary_number)) )
+        binary_number = dtb.decimal_to_binary(i)
+        binary_numbers.append( dtb.convert_n_bits(4, binary_number))
+        gray_code.append( dtb.convert_n_bits(4, gray_encode(binary_number)) )
 
     print("BINARY NUMBERS")
     print( binary_numbers)
